@@ -10,8 +10,6 @@ import os, sys
 from io import BytesIO
 from PIL import Image
 
-destination = '/home/www/xn--80a.xn----gtbkejjbn2cze.xn--p1acf/download/'
-
 def compress(rootdir, filename):
 	path = os.path.join(rootdir, filename)
 
@@ -31,6 +29,13 @@ def compress(rootdir, filename):
 		img.save(path, format = "JPEG", quality = 70)
 	except IOError:
 		pass
+
+"""
+	@var string destionation
+	Contains a path to the folder with images
+"""
+
+destination = '/home/www/domain.com/images/'
 
 for root, subdirs, files in os.walk(destination):
 	for filename in files:
